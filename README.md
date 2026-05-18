@@ -1,1 +1,544 @@
 # portfolio.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devansh Mehra | Business Analyst Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f6f8fc;
+      color: #0f172a;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -180px;
+      right: -150px;
+      width: 430px;
+      height: 430px;
+      background: #2563eb;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.35;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -180px;
+      left: -130px;
+      width: 430px;
+      height: 430px;
+      background: #14b8a6;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.82);
+      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(16, 24, 40, 0.08);
+      backdrop-filter: blur(18px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #000000;
+    }
+
+    nav a {
+      color: #475569;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      padding: 95px 8% 75px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 9px 16px;
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      border-radius: 30px;
+      color: #1d4ed8;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      background: rgba(108, 99, 255, 0.08);
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.05;
+      margin-bottom: 25px;
+      letter-spacing: -2.3px;
+      color: #0f172a;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #2563eb, #14b8a6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #475569;
+      font-size: 18px;
+      max-width: 660px;
+      margin-bottom: 30px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      margin-right: 12px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(108, 99, 255, 0.28);
+    }
+
+    .primary:hover {
+      transform: translateY(-4px);
+      background: #1e40af;
+    }
+
+    .secondary {
+      border: 1px solid rgba(16, 24, 40, 0.12);
+      color: #111827;
+      background: #ffffff;
+    }
+
+    .secondary:hover {
+      transform: translateY(-4px);
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      border-radius: 30px;
+      padding: 32px;
+      box-shadow: 0 25px 80px rgba(16, 24, 40, 0.12);
+      position: relative;
+      overflow: hidden;
+      transition: 0.35s;
+    }
+
+    .profile-card:hover {
+      transform: rotate(-1deg) translateY(-8px);
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, #2563eb, #14b8a6, #f59e0b);
+    }
+
+    .profile-card h3 {
+      font-size: 30px;
+      margin-bottom: 18px;
+      color: #0f172a;
+    }
+
+    .profile-card p {
+      color: #475569;
+      margin-bottom: 15px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .metric {
+      background: #f2f4f7;
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric strong {
+      display: block;
+      color: #2563eb;
+      font-size: 24px;
+    }
+
+    .metric small {
+      color: #64748b;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      margin-bottom: 35px;
+    }
+
+    .section-title span {
+      color: #2563eb;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-top: 8px;
+      letter-spacing: -1.4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      border-radius: 24px;
+      padding: 26px;
+      transition: 0.35s;
+      box-shadow: 0 14px 40px rgba(16, 24, 40, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "→";
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      font-size: 26px;
+      color: #2563eb;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(108, 99, 255, 0.45);
+      box-shadow: 0 24px 60px rgba(108, 99, 255, 0.14);
+    }
+
+    .card:hover::after {
+      opacity: 1;
+      right: 18px;
+    }
+
+    .card h3 {
+      color: #0f172a;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #475569;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(108, 99, 255, 0.1);
+      color: #1d4ed8;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 4px 4px 0 0;
+      font-weight: 800;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .skill {
+      background: #ffffff;
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+      color: #334155;
+      font-weight: 800;
+      transition: 0.3s;
+      box-shadow: 0 10px 28px rgba(16, 24, 40, 0.05);
+    }
+
+    .skill:hover {
+      background: #2563eb;
+      color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    .about-box {
+      background: #ffffff;
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      border-radius: 28px;
+      padding: 38px;
+      color: #475569;
+      max-width: 940px;
+      box-shadow: 0 20px 55px rgba(16, 24, 40, 0.08);
+    }
+
+    .contact {
+      text-align: center;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #14b8a6);
+      margin: 70px 8%;
+      padding: 65px 30px;
+      border-radius: 34px;
+      color: white;
+      box-shadow: 0 25px 80px rgba(108, 99, 255, 0.25);
+    }
+
+    .contact h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 25px;
+    }
+
+    .contact .secondary {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    footer {
+      padding: 25px 8%;
+      text-align: center;
+      color: #64748b;
+      border-top: 1px solid rgba(16, 24, 40, 0.08);
+      background: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .grid, .skills-list, .metric-row {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Devansh <span>Mehra</span></div>
+      <div>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="badge">Business Analyst Portfolio</div>
+      <h1>Transforming business problems into <span>data-backed solutions.</span></h1>
+      <p>
+        I am an aspiring Business Analyst focused on business requirements, process improvement,
+        dashboards, database design, documentation, and practical technology solutions.
+      </p>
+      <div class="buttons">
+        <a href="#projects" class="primary">Explore Projects</a>
+        <a href="#contact" class="secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <h3>Portfolio Snapshot</h3>
+      <p><strong>Role:</strong> Business Analyst</p>
+      <p><strong>Focus Areas:</strong> Data analysis, requirements gathering, dashboards, reporting, systems analysis, and documentation.</p>
+      <p><strong>Goal:</strong> To showcase projects, case studies, reports, and practical business solutions.</p>
+
+      <div class="metric-row">
+        <div class="metric"><strong>6+</strong><small>Projects</small></div>
+        <div class="metric"><strong>12</strong><small>Skills</small></div>
+        <div class="metric"><strong>BA</strong><small>Focus</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <span>Selected Work</span>
+      <h2>Projects & Case Studies</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Power BI Sales Dashboard</h3>
+        <p>An interactive dashboard analysing sales trends, revenue, profit, top-performing products, and business performance insights.</p>
+        <span class="tag">Power BI</span><span class="tag">Data Analysis</span><span class="tag">Dashboard</span>
+      </div>
+
+      <div class="card">
+        <h3>Database Design Project</h3>
+        <p>Designed an Entity Relationship Diagram, data dictionary, business rules, and database structure for a system-based business problem.</p>
+        <span class="tag">ERD</span><span class="tag">SQL</span><span class="tag">Data Modelling</span>
+      </div>
+
+      <div class="card">
+        <h3>Business Process Improvement</h3>
+        <p>Analysed a business process, identified issues, documented requirements, and recommended practical improvements for efficiency.</p>
+        <span class="tag">Process Mapping</span><span class="tag">Requirements</span><span class="tag">BA Documentation</span>
+      </div>
+
+      <div class="card">
+        <h3>Student Deadline Tracker</h3>
+        <p>A web-based project concept allowing students to manage assignment deadlines, update status, view calendars, and receive reminders.</p>
+        <span class="tag">Web Prototype</span><span class="tag">System Analysis</span><span class="tag">UI Planning</span>
+      </div>
+
+      <div class="card">
+        <h3>Excel Business Report</h3>
+        <p>Used Excel to clean, organise, analyse, and present business data through charts, tables, summaries, and recommendations.</p>
+        <span class="tag">Excel</span><span class="tag">Reporting</span><span class="tag">Insights</span>
+      </div>
+
+      <div class="card">
+        <h3>Requirements Documentation</h3>
+        <p>Created business requirements, functional requirements, assumptions, constraints, user needs, and project scope documentation.</p>
+        <span class="tag">BRD</span><span class="tag">User Stories</span><span class="tag">Documentation</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">
+      <span>Capabilities</span>
+      <h2>Business Analyst Skills</h2>
+    </div>
+
+    <div class="skills-list">
+      <div class="skill">Business Requirements Analysis</div>
+      <div class="skill">Stakeholder Communication</div>
+      <div class="skill">Process Mapping</div>
+      <div class="skill">Power BI Dashboards</div>
+      <div class="skill">Excel Data Analysis</div>
+      <div class="skill">SQL Basics</div>
+      <div class="skill">Database Design</div>
+      <div class="skill">User Stories</div>
+      <div class="skill">Business Documentation</div>
+      <div class="skill">Problem Solving</div>
+      <div class="skill">Data Visualisation</div>
+      <div class="skill">Presentation Skills</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">
+      <span>About</span>
+      <h2>About Devansh</h2>
+    </div>
+
+    <div class="about-box">
+      <p>
+        I am building my career as a Business Analyst with a strong interest in using technology,
+        data, and structured thinking to solve business problems. This portfolio showcases my academic
+        and practical projects, including dashboards, database design, business analysis documentation,
+        process improvement work, and system prototypes.
+      </p>
+      <br />
+      <p>
+        My aim is to demonstrate clear communication, analytical thinking, business understanding,
+        and the ability to turn messy problems into practical, well-documented solutions.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let’s Connect</h2>
+    <p>For opportunities, project discussions, or portfolio enquiries, contact me below.</p>
+    <div class="buttons">
+      <a href="mailto:devanshmehra@email.com" class="primary">Email Me</a>
+      <a href="https://www.linkedin.com" class="secondary">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Devansh Mehra. Business Analyst Portfolio.</p>
+  </footer>
+</body>
+</html>
