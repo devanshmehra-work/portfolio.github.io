@@ -206,16 +206,21 @@
       letter-spacing: -1px;
     }
 
-    .about-box {
-      max-width: 980px;
+    .about-box,
+    .project-card {
       background: white;
-      padding: 36px;
-      border-radius: 26px;
       border: 1px solid #e5e7eb;
+      border-radius: 26px;
+      padding: 36px;
       box-shadow: 0 20px 55px rgba(15, 23, 42, 0.07);
     }
 
-    .about-box p {
+    .about-box {
+      max-width: 980px;
+    }
+
+    .about-box p,
+    .project-card p {
       color: #475569;
       margin-bottom: 18px;
       font-size: 17px;
@@ -245,14 +250,8 @@
     }
 
     .project-card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 26px;
-      padding: 32px;
-      max-width: 1120px;
-      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+      max-width: 1050px;
       transition: 0.3s;
-      margin-bottom: 26px;
     }
 
     .project-card:hover {
@@ -260,34 +259,40 @@
       border-color: #2563eb;
     }
 
-    .project-layout {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .project-image {
-      width: 100%;
-      border-radius: 20px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
-    }
-
     .project-card h3 {
-      font-size: 28px;
+      font-size: 30px;
       margin-bottom: 12px;
     }
 
-    .project-card p {
+    .project-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .summary-box {
+      background: #f1f5f9;
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .summary-box strong {
+      display: block;
+      color: #2563eb;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .summary-box span {
       color: #475569;
-      margin-bottom: 16px;
-      font-size: 17px;
+      font-size: 14px;
     }
 
     .highlights {
       margin: 16px 0 20px;
-      padding-left: 18px;
+      padding-left: 20px;
       color: #475569;
     }
 
@@ -354,8 +359,7 @@
         font-size: 14px;
       }
 
-      .hero,
-      .project-layout {
+      .hero {
         grid-template-columns: 1fr;
         padding-top: 60px;
       }
@@ -365,7 +369,8 @@
       }
 
       .stats,
-      .skills-grid {
+      .skills-grid,
+      .project-summary {
         grid-template-columns: 1fr;
       }
     }
@@ -472,41 +477,50 @@
     </div>
 
     <div class="project-card">
-      <div class="project-layout">
-        <div>
-          <img src="dashboard-thumbnail.png" alt="Store Operations Dashboard Thumbnail" class="project-image" />
+      <h3>Store Operations Data Analysis</h3>
+      <p>
+        This project analyses store operations data to understand business performance across different suburbs.
+        The dashboard focuses on total sales, store profit, labour percentage, waste percentage, and suburb-level comparisons.
+      </p>
+
+      <p>
+        The purpose of this project is to show how operational data can support better business decisions by highlighting
+        which locations perform well, where costs may be high, and how key performance indicators compare against targets.
+      </p>
+
+      <div class="project-summary">
+        <div class="summary-box">
+          <strong>Problem</strong>
+          <span>Stores need clearer visibility into sales, labour, waste, and profit performance.</span>
         </div>
 
-        <div>
-          <h3>Store Operations Data Analysis</h3>
-          <p>
-            This project analyses store operations data to understand business performance across different suburbs.
-            The dashboard focuses on total sales, store profit, labour percentage, waste percentage, and suburb-level comparisons.
-          </p>
+        <div class="summary-box">
+          <strong>Approach</strong>
+          <span>Used dashboard-style analysis to compare performance across suburbs and key metrics.</span>
+        </div>
 
-          <p>
-            The purpose of this project is to show how operational data can support better business decisions by highlighting
-            which locations perform well, where costs may be high, and how key performance indicators compare against targets.
-          </p>
-
-          <ul class="highlights">
-            <li>Analysed total sales by suburb and store location.</li>
-            <li>Compared store profit with total sales performance.</li>
-            <li>Tracked labour percentage and waste percentage against targets.</li>
-            <li>Created a visual dashboard suitable for business decision-making.</li>
-          </ul>
-
-          <div class="tags">
-            <span class="tag">Data Analysis</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Store Operations</span>
-            <span class="tag">Business Insights</span>
-            <span class="tag">Dashboard</span>
-          </div>
-
-          <a href="https://github.com/devanshmehra-work/Store-Operations-Data-Analysis" target="_blank" class="btn btn-primary">View GitHub Project</a>
+        <div class="summary-box">
+          <strong>Outcome</strong>
+          <span>Created business insights that can help identify strong and weak operational areas.</span>
         </div>
       </div>
+
+      <ul class="highlights">
+        <li>Analysed total sales by suburb and store location.</li>
+        <li>Compared store profit with total sales performance.</li>
+        <li>Tracked labour percentage and waste percentage against targets.</li>
+        <li>Presented data in a clear business dashboard format.</li>
+      </ul>
+
+      <div class="tags">
+        <span class="tag">Data Analysis</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Store Operations</span>
+        <span class="tag">Business Insights</span>
+        <span class="tag">Dashboard</span>
+      </div>
+
+      <a href="https://github.com/devanshmehra-work/Store-Operations-Data-Analysis" target="_blank" class="btn btn-primary">View GitHub Project</a>
     </div>
   </section>
 
